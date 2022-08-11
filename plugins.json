@@ -1,0 +1,22 @@
+[
+    {
+        "iconUrl": "https://www.google.com/s2/favicons?domain=prmovies.green&sz=%size%",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/IndusAryan/Aryans-Cloudstream-Extensions",
+        "fileSize": 13979,
+        "status": 1,
+        "language": "hi",
+        "authors": [
+            "AryanInvader"
+        ],
+        "tvTypes": [
+            "TvSeries",
+            "Movie"
+        ],
+        "version": 10,
+        "internalName": "PrMoviesProvider",
+        "description": "Contains Bharatiya Movies & Webseries from Indian Film Industry and Dubbed Hollywood content, Max Resolution is 720p",
+        "url": "https://raw.githubusercontent.com/IndusAryan/Aryans-Cloudstream-Extensions/builds/PrMoviesProvider.cs3",
+        "name": "PrMoviesProvider"
+    }
+]
