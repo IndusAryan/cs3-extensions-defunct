@@ -2,10 +2,10 @@ version = 1
 
 cloudstream {
     language = "hi"
-    // All of these properties are optional, you can safely remove them
 
     description = "Contains Bharatiya Movies & Webseries from Indian Film Industry and Dubbed Hollywood content, Max Resolution is 720p"
-     authors = listOf("AryanInvader")
+
+    authors = listOf("AryanInvader")
 
     /**
      * Status int as the following:
