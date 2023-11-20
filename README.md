@@ -1,27 +1,12 @@
-**⚠️ This is currently under development, dont use it yet if you're not comfortable with constantly merging new changes**
 
-# `Cloudstream3 Plugin Repo Template`
+### License
+[![GNU GPLv3 Image](https://www.gnu.org/graphics/gplv3-127x51.png)](http://www.gnu.org/licenses/gpl-3.0.en.html)
 
-Template for a [Cloudstream3](https://github.com/recloudstream) plugin repo
+These extensions are Free: You can use, study, share and modify it at your will. They can be redistributed and/or modified under the terms of the
+[GNU General Public License](https://www.gnu.org/licenses/gpl.html) version 3 or later published by the Free Software Foundation.
 
-**⚠️ Make sure you check "Include all branches" when using this template**
+### DMCA
+We hereby issue this notice to inform you that these extemsions are just like ordinary search engines that fetch video files from internet, and do not violate the provisions of the Digital Millennium Copyright Act (DMCA). The Content that they are accessing are not hosted by us or the Cloudstream 3 application but the websites they are scraoing from.
+If you think they are violating any intellectual property then please contact the actual file hosters not us.
 
- 
-## Getting started with writing your first plugin
-
-This template includes 1 example plugin.
-
-1. Open the root build.gradle.kts, read the comments and replace all the placeholders
-2. Familiarize yourself with the project structure. Most files are commented
-3. Build or deploy your first plugin using:
-   - Windows: `.\gradlew.bat ExampleProvider:make` or `.\gradlew.bat ExampleProvider:deployWithAdb`
-   - Linux & Mac: `./gradlew ExampleProvider:make` or `./gradlew ExampleProvider:deployWithAdb`
-
-## License
-
-Everything in this repo is released into the public domain. You may use it however you want with no conditions whatsoever
-
-## Attribution
-
-This template as well as the gradle plugin and the whole plugin system is **heavily** based on [Aliucord](https://github.com/Aliucord).
-*Go use it, it's a great mobile discord client mod!*
+Thank You.
