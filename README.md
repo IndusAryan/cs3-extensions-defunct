@@ -11,5 +11,5 @@ We hereby issue this notice to inform you that these extemsions are just like or
 If you think they are violating any intellectual property then please contact the actual file hosters not us.
 
 Thank You.
-=======
+
 
