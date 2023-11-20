@@ -6,7 +6,7 @@ cloudstream {
     // All of these properties are optional, you can safely remove them
 
     // description = "Lorem Ipsum"
-     authors = listOf("darkdemon")
+     authors = listOf("AryanInvader")
 
     /**
      * Status int as the following:
@@ -21,5 +21,5 @@ cloudstream {
         "Movie",
     )
 
-    iconUrl = "https://www.google.com/s2/favicons?domain=prmovies.bio&sz=%size%"
+    iconUrl = "https://www.google.com/s2/favicons?domain=prmovies.green&sz=%size%"
 }
