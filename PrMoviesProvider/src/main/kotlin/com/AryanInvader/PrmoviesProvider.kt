@@ -8,7 +8,8 @@ import com.lagradost.cloudstream3.utils.ExtractorLink
 import com.lagradost.cloudstream3.utils.loadExtractor
 import org.jsoup.nodes.Element
 
-class PrmoviesProvider : MainAPI() { // all providers must be an instance of MainAPI
+class PrmoviesProvider : MainAPI() {
+
     override var mainUrl = "https://prmovies.men"
     override var name = "Prmovies"
     override val hasMainPage = true
@@ -20,16 +21,16 @@ class PrmoviesProvider : MainAPI() { // all providers must be an instance of Mai
     )
 
     override val mainPage = mainPageOf(
-        "$mainUrl/most-favorites/page/" to "Most Viewed",
+        "$mainUrl/most-favorites/page/" to "Popular",
         "$mainUrl/director/netflix/page/" to "Netflix",
         "$mainUrl/director/amazon-prime/page/" to "Amazon Prime",
-        "$mainUrl/director/altbalaji/page/" to "Alt Balaji",
-        "$mainUrl/director/zee5/page/" to "Zee5",
-        "$mainUrl/director/voot-originals/page/" to "Voot Originals",
-        "$mainUrl/director/sonyliv-original/page/" to "Sonyliv Originals",
         "$mainUrl/director/hotstar/page/" to "Hotstar",
+        "$mainUrl/director/discovery/page/" to "Discovery",
+        "$mainUrl/director/zee5/page/" to "Zee5",
+        "$mainUrl/director/sonyliv-original/page/" to "Sonyliv Originals",
+        "$mainUrl/director/voot-originals/page/" to "Voot Originals",
         "$mainUrl/director/viu-originals/page/" to "Viu Originals",
-        "$mainUrl/director/discovery/page/" to "Discovery"
+        "$mainUrl/director/altbalaji/page/" to "Alt Balaji",
     )
 
     override suspend fun getMainPage(
@@ -44,6 +45,7 @@ class PrmoviesProvider : MainAPI() { // all providers must be an instance of Mai
         val home = document.select("div.ml-item").mapNotNull {
             it.toSearchResult()
         }
+
         return newHomePageResponse(request.name, home)
     }
 
@@ -73,10 +75,12 @@ class PrmoviesProvider : MainAPI() { // all providers must be an instance of Mai
         val tags = document.select("div.mvici-left p:nth-child(1) a").map { it.text() }
         val year = document.select("div.mvici-right p:nth-child(3) a").text().trim()
             .toIntOrNull()
+
         val tvType = if (document.selectFirst("div.les-content")
                 ?.select("a")?.size!! > 1 || document.selectFirst("ul.idTabs li strong")?.text()
                 ?.contains(Regex("(?i)(EP\\s?[0-9]+)|(episode\\s?[0-9]+)")) == true
         ) TvType.TvSeries else TvType.Movie
+
         val description = document.selectFirst("p.f-desc")?.text()?.trim()
         val trailer = fixUrlNull(document.select("iframe#iframe-trailer").attr("src"))
         val rating = document.select("div.mvici-right > div.imdb_r span").text().toRatingInt()
@@ -96,6 +100,7 @@ class PrmoviesProvider : MainAPI() { // all providers must be an instance of Mai
                         name = it.select("strong").text().replace("Server Ep", "Episode")
                     )
                 }
+
             } else {
                 document.select("div.les-content a").map {
                     Episode(
@@ -115,7 +120,9 @@ class PrmoviesProvider : MainAPI() { // all providers must be an instance of Mai
                 this.recommendations = recommendations
                 addTrailer(trailer)
             }
+
         } else {
+
             newMovieLoadResponse(title, url, TvType.Movie, url) {
                 this.posterUrl = poster
                 this.year = year
@@ -158,11 +165,9 @@ class PrmoviesProvider : MainAPI() { // all providers must be an instance of Mai
                     }
                 }
         } else {
+
             loadExtractor(data, "$mainUrl/", subtitleCallback, callback)
         }
-
         return true
     }
-
-
 }
