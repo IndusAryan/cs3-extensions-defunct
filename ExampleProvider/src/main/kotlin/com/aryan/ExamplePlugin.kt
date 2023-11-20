@@ -1,4 +1,4 @@
-package com.example
+package com.aryan
 
 import com.lagradost.cloudstream3.plugins.CloudstreamPlugin
 import com.lagradost.cloudstream3.plugins.Plugin
@@ -17,8 +17,6 @@ class TestPlugin: Plugin() {
         registerMainAPI(ExampleProvider(this))
 
         openSettings = { ctx ->
-            val frag = BlankFragment(this)
-            frag.show(activity!!.supportFragmentManager, "sexFrag")
         }
     }
 }
