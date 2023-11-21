@@ -53,8 +53,8 @@ class YugenAnime : MainAPI() {
     override val mainPage = mainPageOf(
         "$mainUrl/trending/?page=" to "Trending",
         "$mainUrl/latest/?page=" to "Recently Released",
-        "$mainUrl/best/?page=" to "Most Popular Series",
-        "$mainUrl/new/?page=" to "New to YugenAnime",
+        "$mainUrl/best/?page=" to "Most Popular",
+        "$mainUrl/new/?page=" to "Recently Added",
     )
 
     override suspend fun getMainPage(
