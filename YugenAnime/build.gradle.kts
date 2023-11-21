@@ -24,5 +24,5 @@ cloudstream {
 
     language = "en"
 
-    iconUrl = "https://www.google.com/s2/favicons?domain=yugen.to&sz=%size%"
+    iconUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvaBBstvo8iS1OljAvUj74hHr8vC73g2BzKAti6kApj9RKJFXX3hQKzprxTtQaIw3gtPA&usqp=CAU"
 }
