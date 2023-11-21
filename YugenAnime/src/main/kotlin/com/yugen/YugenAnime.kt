@@ -13,15 +13,16 @@ import org.jsoup.nodes.Element
 import java.net.URI
 
 class YugenAnime : MainAPI() {
+
     override var mainUrl = "https://yugenanime.tv"
     override var name = "YugenAnime"
     override val hasMainPage = true
     override var lang = "en"
     override val hasDownloadSupport = true
-
+    override val hasQuickSearch = true
     override val supportedSyncNames = setOf(
         SyncIdName.Anilist,
-        SyncIdName.MyAnimeList
+        SyncIdName.MyAnimeList,
     )
 
     override val supportedTypes = setOf(
@@ -89,7 +90,7 @@ class YugenAnime : MainAPI() {
 
     override suspend fun search(query: String): List<SearchResponse> {
 
-        val document = app.get("$mainUrl/search/?q=$query").document
+        val document = app.get("$mainUrl/discover/?q=$query").document
 
         return document.select("div.cards-grid a.anime-meta").mapNotNull {
             it.toSearchResult()
