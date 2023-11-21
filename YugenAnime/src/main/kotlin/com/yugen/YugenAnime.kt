@@ -27,7 +27,7 @@ class YugenAnime : MainAPI() {
     override val supportedTypes = setOf(
         TvType.Anime,
         TvType.AnimeMovie,
-        TvType.OVA
+        TvType.OVA,
     )
 
     companion object {
@@ -66,17 +66,21 @@ class YugenAnime : MainAPI() {
             it.toSearchResult()
         }
         items.add(HomePageList(request.name, home))
+
         return newHomePageResponse(items)
     }
 
     private fun Element.toSearchResult(): AnimeSearchResponse? {
+
         val title = this.attr("title").ifBlank { this.select("div.ep-origin-name").text() }
             .ifBlank { this.select("span.anime-name").text() } ?: return null
         val href = fixUrl(this.attr("href").ifBlank { this.select("a.ep-details").attr("href") })
         val posterUrl = fixUrlNull(this.selectFirst("img.lozad")?.attr("data-src"))
+
         val epNum =
             this.select("a.ep-thumbnail").attr("title").substringBefore(":").filter { it.isDigit() }
                 .toIntOrNull()
+
         return newAnimeSearchResponse(title, href, TvType.Anime) {
             this.posterUrl = posterUrl
             addDubStatus(dubExist = true, subExist = true, dubEpisodes = epNum, subEpisodes = epNum)
@@ -84,7 +88,9 @@ class YugenAnime : MainAPI() {
     }
 
     override suspend fun search(query: String): List<SearchResponse> {
+
         val document = app.get("$mainUrl/search/?q=$query").document
+
         return document.select("div.cards-grid a.anime-meta").mapNotNull {
             it.toSearchResult()
         }
@@ -93,12 +99,14 @@ class YugenAnime : MainAPI() {
     override suspend fun getLoadUrl(name: SyncIdName, id: String): String? {
         val syncId = id.split("/").last()
         val url = if (name == SyncIdName.Anilist) {
+
             "${consumetAnilist}/info/$syncId"
         } else {
+
             "${consumetMal}/info/$syncId"
         }
-        val res = app.get(url).parsedSafe<SyncInfo>()
 
+        val res = app.get(url).parsedSafe<SyncInfo>()
         val title = res?.title?.romaji ?: res?.title?.english
         val year = res?.startDate?.year
         val season = res?.season
@@ -113,8 +121,8 @@ class YugenAnime : MainAPI() {
     }
 
     override suspend fun load(url: String): LoadResponse? {
-        val document = app.get(url).document
 
+        val document = app.get(url).document
         val title = document.selectFirst("div.content h1")?.text() ?: return null
         val poster = document.selectFirst("img.cover")?.attr("src")
         val tags = document.getPageContent("Genres").split(",").map { it.trim() }
@@ -130,6 +138,7 @@ class YugenAnime : MainAPI() {
 
         val episodes = mutableListOf<Episode>()
         for(page in 1..50) {
+
             val doc = app.get("${url}watch/?page=$page").document
             val currentPage = doc.select("ul.pagination div.btn.btn-default").text().toIntOrNull() ?: 1
             if(page > currentPage) break
@@ -166,6 +175,7 @@ class YugenAnime : MainAPI() {
         val dubData = data.substringBeforeLast("/$episode").let { "$it-dub/$episode" }
 
         listOf(data, dubData).apmap { url ->
+
             val doc = app.get(url).document
             val iframe = doc.select("iframe#main-embed").attr("src") ?: return@apmap null
             val id = iframe.removeSuffix("/").split("/").lastOrNull() ?: return@apmap null
@@ -230,5 +240,4 @@ class YugenAnime : MainAPI() {
         @JsonProperty("startDate") val startDate: StartDate? = null,
         @JsonProperty("season") val season: String? = null,
     )
-
 }
