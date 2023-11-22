@@ -1,3 +1,6 @@
+
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FIndusAryan%2FAryans-Repo%2F&count_bg=%23060606&title_bg=%23FC6005&icon=mediafire.svg&icon_color=%23FFFFFF&title=Users+%2F+Impressions&edge_flat=false)](https://hits.seeyoufarm.com)
+
 ### 🕹 Tools and Programming languages used :
 <p align="left">
   <a href="https://skillicons.dev">
