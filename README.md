@@ -1,4 +1,15 @@
 
+
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FIndusAryan%2FAryans-Repo%2F&count_bg=%23060606&title_bg=%23FC6005&icon=mediafire.svg&icon_color=%23FFFFFF&title=Avg+%2F+Hits&edge_flat=false)](https://hits.seeyoufarm.com)
+
+### 🕹 Tools and Programming languages used :
+<p align="left">
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=kotlin,androidstudio,gradle,github,githubactions&theme=light&perline=5" />
+  </a>
+</p>
+
+
 ### License
 [![GNU GPLv3 Image](https://www.gnu.org/graphics/gplv3-127x51.png)](http://www.gnu.org/licenses/gpl-3.0.en.html)
 
@@ -11,5 +22,3 @@ We hereby issue this notice to inform you that these extemsions are just like or
 If you think they are violating any intellectual property then please contact the actual file hosters not the owners of this repo or the CloudStream 3 app.
 
 Thank You.
-
-
