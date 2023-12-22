@@ -62,7 +62,7 @@ subprojects {
             }
         }
 
-        namespace = "com.aryan"
+        namespace = ""
     }
 
     dependencies {
