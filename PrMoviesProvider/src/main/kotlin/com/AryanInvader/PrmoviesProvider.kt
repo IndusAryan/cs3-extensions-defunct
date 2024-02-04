@@ -1,4 +1,4 @@
-package com.AryanInvader
+package com.aryanInvader
 
 import com.lagradost.cloudstream3.*
 import com.lagradost.cloudstream3.LoadResponse.Companion.addActors
@@ -8,12 +8,13 @@ import com.lagradost.cloudstream3.utils.ExtractorLink
 import com.lagradost.cloudstream3.utils.loadExtractor
 import org.jsoup.nodes.Element
 
-class PrmoviesProvider : MainAPI() {
+class PRMoviesProvider : MainAPI() {
 
-    override var mainUrl = "https://prmovies.fan"
-    override var name = "Prmovies"
+    override var mainUrl = "https://prmovies.wine"
+    override var name = "PRMovies"
     override val hasMainPage = true
     override var lang = "hi"
+    override val hasQuickSearch = true
     override val hasDownloadSupport = true
     override val supportedTypes = setOf(
         TvType.Movie,
