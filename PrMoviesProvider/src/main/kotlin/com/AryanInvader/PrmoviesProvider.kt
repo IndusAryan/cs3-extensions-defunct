@@ -23,14 +23,14 @@ class PRMoviesProvider : MainAPI() {
 
     override val mainPage = mainPageOf(
         "$mainUrl/most-favorites/page/" to "Popular",
-        "$mainUrl/director/netflix/page/" to "Netflix",
+        "$mainUrl/director/netflix/page/" to "NetFlix",
         "$mainUrl/director/amazon-prime/page/" to "Amazon Prime",
-        "$mainUrl/director/hotstar/page/" to "Hotstar",
-        "$mainUrl/director/discovery/page/" to "Discovery",
+        "$mainUrl/director/hotstar/page/" to "HotStar",
+        "$mainUrl/director/discovery/page/" to "Discovery+",
+        "$mainUrl/director/sonyliv-original/page/" to "SonyLiv",
+        "$mainUrl/director/voot-originals/page/" to "Voot",
+        "$mainUrl/director/viu-originals/page/" to "Viu",
         "$mainUrl/director/zee5/page/" to "Zee5",
-        "$mainUrl/director/sonyliv-original/page/" to "Sonyliv Originals",
-        "$mainUrl/director/voot-originals/page/" to "Voot Originals",
-        "$mainUrl/director/viu-originals/page/" to "Viu Originals",
         "$mainUrl/director/altbalaji/page/" to "Alt Balaji",
     )
 

@@ -1,0 +1,42 @@
+1) use jdk 17 -
+
+sourceCompatibility = JavaVersion.VERSION_17
+targetCompatibility = JavaVersion.VERSION_17
+
+jvmTarget = "17"
+
+
+2) upgrade gradle build and include namespace in the config -
+
+classpath("com.android.tools.build:gradle:8.2.0")
+
+namespace = ""
+
+3) in gradle wrapper -
+
+distributionBase=GRADLE_USER_HOME
+distributionPath=wrapper/dists
+distributionUrl=https\://services.gradle.org/distributions/gradle-8.5-bin.zip
+networkTimeout=10000
+validateDistributionUrl=true
+zipStoreBase=GRADLE_USER_HOME
+zipStorePath=wrapper/dists
+
+4)sync gradle
+
+5) modify workflows to use jdk 17 and include adopt
+
+ - name: Setup JDK 17
+        uses: actions/setup-java@v4
+        with:
+         
+          java-version: 17
+          distribution: 'adopt'
+
+      - name: Setup Android SDK
+        
+        uses: android-actions/setup-android@v3
+
+
+6) delete manifest files from extensions , but when the manifest merge process will be removed from cloudstream gradle plugin
+
