@@ -10,15 +10,15 @@ import org.jsoup.nodes.Element
 
 class PRMoviesProvider : MainAPI() {
 
-    override var mainUrl = "https://prmovies.loan"
+    override var mainUrl = "https://prmovies.rent"
     override var name = "PRMovies"
     override val hasMainPage = true
     override var lang = "hi"
-    override val hasQuickSearch = true
+    override val hasQuickSearch = false
     override val hasDownloadSupport = true
     override val supportedTypes = setOf(
         TvType.Movie,
-        TvType.TvSeries
+        TvType.TvSeries,
     )
 
     override val mainPage = mainPageOf(

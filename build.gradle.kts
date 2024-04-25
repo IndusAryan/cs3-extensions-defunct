@@ -13,7 +13,7 @@ buildscript {
         classpath("com.android.tools.build:gradle:7.0.4")
         // Cloudstream gradle plugin which makes everything work and builds plugins
         classpath("com.github.recloudstream:gradle:-SNAPSHOT")
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.22")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.23")
     }
 }
 
@@ -70,7 +70,7 @@ subprojects {
         // Stubs for all Cloudstream classes
         apk("com.lagradost:cloudstream3:pre-release")
         implementation(kotlin("stdlib")) // adds standard kotlin
-        implementation("com.github.Blatzar:NiceHttp:0.4.11") // http library
+        implementation("com.github.Blatzar:NiceHttp:+") // http library
         implementation("org.jsoup:jsoup:1.17.2") // html parser
         implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.16.1")
         implementation("io.karn:khttp-android:0.1.2")
