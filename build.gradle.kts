@@ -75,7 +75,7 @@ subprojects {
         implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.16.1")
         implementation("io.karn:khttp-android:0.1.2")
         implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.0")
-        implementation("org.mozilla:rhino:1.7.14") //run JS
+        implementation("org.mozilla:rhino:1.7.15") //run JS
     }
 }
 
