@@ -1,4 +1,4 @@
-###⚠️ NOTE:
+### ⚠️ NOTE:
 This repo has been shut down, and the provider is shifted to phisher98 repo. Join Discord for more information.
 
 [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FIndusAryan%2FAryans-Repo%2F&count_bg=%23060606&title_bg=%23FC6005&icon=mediafire.svg&icon_color=%23FFFFFF&title=Avg+%2F+Hits&edge_flat=false)](https://hits.seeyoufarm.com)
